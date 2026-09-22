@@ -1,0 +1,10 @@
+{
+  "name": "Hoctiengtrung",
+  "description": "Ứng dụng tự học tiếng Trung toàn diện 4 kỹ năng Nghe - Nói - Đọc - Viết, HSK 1-6, hội thoại thực tế và tiếng Trung chuyên ngành may mặc với trợ lý AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Thông tin hồ sơ và cài đặt cá nhân của người dùng",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User ID từ Firebase Auth" },
+        "displayName": { "type": "string", "description": "Tên hiển thị của người dùng" },
+        "email": { "type": "string", "description": "Địa chỉ email Google" },
+        "photoURL": { "type": "string", "description": "Ảnh đại diện Google" },
+        "currentHskLevel": { "type": "string", "description": "Cấp độ HSK hiện tại (HSK1 - HSK6)" },
+        "targetHskLevel": { "type": "string", "description": "Cấp độ HSK mục tiêu" },
+        "streakDays": { "type": "number", "description": "Số ngày học liên tiếp" },
+        "lastActiveDate": { "type": "string", "description": "Ngày học gần nhất YYYY-MM-DD" },
+        "totalWordsLearned": { "type": "number", "description": "Tổng số từ vựng đã nắm vững" },
+        "totalLessonsCompleted": { "type": "number", "description": "Tổng số bài học hoàn thành" },
+        "totalStudyMinutes": { "type": "number", "description": "Tổng phút học tập" },
+        "accuracyScore": { "type": "number", "description": "Tỷ lệ chính xác trung bình %" },
+        "notificationEnabled": { "type": "boolean", "description": "Trạng thái bật nhắc nhở" },
+        "dailyReminderTime": { "type": "string", "description": "Khung giờ nhắc học hàng ngày" },
+        "badges": { "type": "array", "description": "Danh sách huy hiệu thành tựu" }
+      },
+      "required": ["uid", "displayName"]
+    },
+    "UserProgress": {
+      "title": "UserProgress",
+      "description": "Dữ liệu tiến độ học tập, điểm XP, từ vựng và bài tập cá nhân hóa",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User ID sở hữu" },
+        "totalXP": { "type": "number", "description": "Tổng điểm kinh nghiệm XP" },
+        "wordsLearned": { "type": "number", "description": "Số từ đã học" },
+        "lessonsCompleted": { "type": "number", "description": "Số bài học đã hoàn thành" },
+        "completedLessonIds": { "type": "array", "description": "Danh sách ID bài học đã học" },
+        "lastLessonId": { "type": "string", "description": "Bài học đang học dở" },
+        "favoriteWordIds": { "type": "array", "description": "Danh sách ID từ vựng yêu thích" },
+        "difficultWordIds": { "type": "array", "description": "Danh sách ID từ vựng khó cần ôn lại" },
+        "masteredWordIds": { "type": "array", "description": "Danh sách ID từ vựng đã thuộc" },
+        "learningWordIds": { "type": "array", "description": "Danh sách ID từ vựng đang học" },
+        "quizScores": { "type": "object", "description": "Điểm số các bài quiz" },
+        "speakingPracticedCount": { "type": "number", "description": "Lượt luyện nói Pinyin" },
+        "listeningPracticedCount": { "type": "number", "description": "Lượt luyện nghe" },
+        "readingPracticedCount": { "type": "number", "description": "Lượt luyện đọc" },
+        "writingPracticedCount": { "type": "number", "description": "Lượt tập viết Hán tự" },
+        "dialoguesCompletedCount": { "type": "number", "description": "Lượt hoàn thành hội thoại xưởng may" },
+        "hskAccuracyRates": { "type": "object", "description": "Tỷ lệ chính xác theo từng cấp HSK" }
+      },
+      "required": ["uid", "totalXP"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Tài liệu hồ sơ cá nhân của người dùng"
+    },
+    "/users/{userId}/data/progress": {
+      "schema": "UserProgress",
+      "description": "Tài liệu lưu trữ toàn bộ trạng thái tiến trình học tập cá nhân hóa của người dùng"
+    }
+  }
+}

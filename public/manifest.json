@@ -1,0 +1,31 @@
+{
+  "short_name": "Hello China",
+  "name": "Hello China - Học Tiếng Trung Toàn Diện",
+  "description": "Nền tảng học tiếng Trung toàn diện: Phát âm Pinyin, 214 Bộ thủ, Giáo trình HSK 1-6, Hội thoại giao tiếp thực tế và Luyện phản xạ AI.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/"
+}

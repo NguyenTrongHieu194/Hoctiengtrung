@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/**": {
+      "includeFiles": "{api/data/**,data/**,public/data/**,server/data/**}",
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
